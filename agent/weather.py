@@ -57,6 +57,24 @@ def describe_condition(weather_data):
     elif code in range (95, 100):
         return "storm"
     else:
-        return "unknow"
+        return "unknown"
 
-    
+
+def interpret_departure_weather(weather_data):
+    condition = describe_condition(weather_data["weathercode"])
+
+    '''
+    Interprets weather at the DEPARTURE airport, since this is what can actually
+    cause a delay before the flight takes off.
+    '''
+
+    delay_notes = {
+        "clear" : "No weather-related delay expected at departure.",
+        "fog" : "Possible minor delay due to reduced vsibility at departure.",
+        "rain" : "Departure may be slightly affected by rain, minor delay possible.",
+        "snow" : "Snow at departure airport may cause delays.",
+        "storm" :  "Estimated delay of 15-20 minutes due to storm conditions at departure.",
+        "unknown" : "Weather condition unclear, no specific delay estimate."
+    }
+
+    return {"condition" : condition, "delay_notes" : delay_notes[condition]}

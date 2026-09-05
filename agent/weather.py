@@ -1,3 +1,11 @@
+"""
+Provides real-time weather data for airports, used by the SkyGuard agent
+to check current conditions at a flight's departure and destination.
+
+Weather data comes from the Open-Meteo API and
+reflects conditions at the moment of the request
+"""
+
 import requests
 
 Airports_coordinates= {
@@ -12,7 +20,7 @@ Airports_coordinates= {
     "MAD" : (40.4983, -3.5676),
     "LIS" : (38.7813, -9.1359),
     "MUC" : (48.3538, 11.7861),
-    "BNC" : (41.2974, 2.0833),
+    "BCN" : (41.2974, 2.0833),
     "ATH" : (37.9364, 23.9445),
     "FRA" : (50.0379, 8.5622),
     "CPH" : (55.6180, 12.6560),
@@ -90,12 +98,13 @@ def get_destination_weather_info(weather_data):
         "fog" : "It is currently foggy at the destination.",
         "rain" : "It is currently raining at the destination.",
         "snow" : "It is currently snowing at the destination.",
-        "storm" : "here is currently a storm at the destination.",
+        "storm" : "There is currently a storm at the destination.",
         "unknown" : "Current weather conditions at the destination are unclear."
     }
 
     return {
         "condition" : condition,
         "temperature" : weather_data["temperature_2m"],
-        "info_notes" : info_notes
+        "info_notes" : info_notes[condition]
     }
+

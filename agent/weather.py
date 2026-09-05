@@ -43,8 +43,8 @@ def get_weather(airport_code):
 
 
 
-def describe_condition(weather_data):
-    code = weather_data["weathercode"]
+def describe_condition(code):
+    # code = weather_data["weathercode"]
 
     if code == 0 or code in (1, 2, 3):
         return "clear"
@@ -77,4 +77,25 @@ def interpret_departure_weather(weather_data):
         "unknown" : "Weather condition unclear, no specific delay estimate."
     }
 
-    return {"condition" : condition, "delay_notes" : delay_notes[condition]}
+    return {
+        "condition" : condition,
+        "delay_notes" : delay_notes[condition]
+          }
+
+def get_destination_weather_info(weather_data):
+    condition = describe_condition(weather_data["weathercode"])
+
+    info_notes = {
+        "clear" : "Skies are currently clear at the destination.",
+        "fog" : "It is currently foggy at the destination.",
+        "rain" : "It is currently raining at the destination.",
+        "snow" : "It is currently snowing at the destination.",
+        "storm" : "here is currently a storm at the destination.",
+        "unknown" : "Current weather conditions at the destination are unclear."
+    }
+
+    return {
+        "condition" : condition,
+        "temperature" : weather_data["temperature_2m"],
+        "info_notes" : info_notes
+    }

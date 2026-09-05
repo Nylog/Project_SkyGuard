@@ -41,3 +41,22 @@ def get_weather(airport_code):
     data = response.json()
     return data["current"]
 
+
+
+def describe_condition(weather_data):
+    code = weather_data["weathercode"]
+
+    if code == 0 or code in (1, 2, 3):
+        return "clear"
+    elif code in (45, 48):
+        return "fog"
+    elif code in range (51, 68) or code in (80, 81, 82):
+        return "rain"
+    elif code in range (71, 78):
+        return "snow"
+    elif code in range (95, 100):
+        return "storm"
+    else:
+        return "unknow"
+
+    

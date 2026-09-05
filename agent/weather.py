@@ -21,3 +21,23 @@ Airports_coordinates= {
     "VIE" : (48.1103, 16.5697),
     "WAW" : (52.1657, 20.9671)
 }
+
+def get_weather(airport_code):    
+    if airport_code not in Airports_coordinates:
+        return None
+
+    lat, lon = Airports_coordinates[airport_code]
+
+    response = requests.get(
+        "https://api.open-meteo.com/v1/forecast",
+        params={
+            "latitude": lat,
+            "longitude": lon,
+            "current": "temperature_2m,weathercode,windspeed_10m",
+        },
+        timeout=5,
+    )
+    response.raise_for_status()  # raises an error if the request failed
+    data = response.json()
+    return data["current"]
+

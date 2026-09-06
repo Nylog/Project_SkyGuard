@@ -1,3 +1,9 @@
+"""
+Combines flight data (from the SQLite database) and weather data (from Open-Meteo)
+that the SkyGuard agent can call to answer operational
+queries about a specific flight.
+"""
+
 import sys # provides access to Python's import system, including the list of folders it searches for modules
 from pathlib import Path
 
@@ -46,13 +52,13 @@ def get_flight_status(flight_number):
     if departure_weather is not None:
         result["departure_weather"] = interpret_departure_weather(departure_weather)
     else:
-        result["departure_weather"] = {"condition" : "unavaible", "delay_notes" : "Weather data unavaible"}
+        result["departure_weather"] = {"condition" : "unavailable", "delay_notes" : "Weather data unavailable"}
 
 
     if destination_weather is not None:
         result["destination_weather"] = get_destination_weather_info(destination_weather)
     else:
-        result["destination_weather"] = {"condition" : "unavaible", "delay_notes" : "Weather data unavaible"}
+        result["destination_weather"] = {"condition" : "unavailable", "info_notes" : "Weather data unavailable"}
 
     return result # a single dictionary combining flight status and weather at both airports
 

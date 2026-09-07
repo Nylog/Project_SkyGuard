@@ -21,3 +21,6 @@ def flight_status_tool(flight_number : str) -> dict:
         return {"error" : f"No flight found with number: {flight_number}"}
     return result
 
+llm = ChatOllama(model = "qwen2.5:7b-instruct")
+
+agent = create_react_agent(llm, tools = [flight_status_tool], prompt = SYSTEM_PROMPT)

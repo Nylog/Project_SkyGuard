@@ -12,3 +12,12 @@ CREATE TABLE IF NOT EXISTS flights (
     status TEXT NOT NULL DEFAULT 'ON TIME'
         CHECK (status IN ('ON TIME', 'DELAYED', 'BOARDING', 'DEPARTED', 'LANDED', 'CANCELLED'))
 );
+
+
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT NOT NULL UNIQUE,
+    password_hash TEXT NOT NULL,
+    role TEXT NOT NULL DEFAULT 'guest'
+        CHECK (role IN ('guest', 'admin'))
+);

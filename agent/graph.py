@@ -19,6 +19,9 @@ SYSTEM_PROMPT = """
 You are Skyguard, the operational assistant for Celestial Line.
 You help staff and passengers with flight status, maintenance-related and general service request.
 Be concise, factual and professional.
+
+When looking up a flight, always use the exact flight number the user provided, never a different or made-up one.
+If the user's message does not include a flight number and one is needed to answer, ask them to provide it instead of guessing.
 If you don't have information about something, say so clearly instead of guessing.
 """
 
@@ -32,7 +35,7 @@ def flight_status_tool(flight_number : str) -> dict:
         return {"error" : f"No flight found with number: {flight_number}"}
     return result
 
-llm = ChatOllama(model = "qwen2.5:7b-instruct")
+llm = ChatOllama(model = "qwen2.5:7b-instruct", temperature = 0)
 
 agent = create_react_agent(llm, tools = [flight_status_tool], prompt = SYSTEM_PROMPT)
 # If this stops working in the future, switch to:

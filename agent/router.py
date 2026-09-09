@@ -27,7 +27,7 @@ def classify_message(text):
     Returns the predicted category as a string.
     """
 
-    inputs = tokenizer(text, return_tensor = "pt", truncation = "true", padding = "max_length", max_length = 50)
+    inputs = tokenizer(text, return_tensors = "pt", truncation = True, padding = "max_length", max_length = 50)
 
     inputs_on_device = {}
     for key, value in inputs.items() :
@@ -53,17 +53,16 @@ def handle_message(text, role):
 
     if not is_allowed(role, category):
 
-        return: {
+        return {
             "category" : category,
             "allowed" : False,
             "response" : f"Access denied: your role does not have permission to access {category} requests."
         }
 
-    result = agent.invoke({"mwssage" : [("user", text)]})
+    result = agent.invoke({"message" : [("user", text)]})
 
     return {
-        "categorry" : category,
+        "category" : category,
         "allowed" : True,
-        "respons" : result["message"][-1].content
+        "response" : result["messages"][-1].content
     }
-

@@ -1,25 +1,44 @@
 from pathlib import Path
 import sqlite3
+from datetime import datetime, timedelta
 
 BASE_DIR = Path(__file__).resolve().parent.parent  # project root
 DB_PATH = BASE_DIR / "data" /  "flights.db" # where the SQLite database file will be created
 SCHEMA_PATH = BASE_DIR / "db" / "schema.sql" # the SQL file defining the flights table structure
 
+
+NOW = datetime.now().replace(minute=0, second=0, microsecond=0) # Reference point: "now", rounded down to the current hour for cleaner timestamps.
+
 # list of fictional flights to insert
 
-flights = [
-    ("SK101", "Airbus A330", "JFK", "TLV", "2026-09-09 17:30", "2026-09-10 10:50", 620, "B12", "ON TIME"),
-    ("SK204", "Airbus A220-100", "FCO", "LCY", "2026-09-10 09:15", "2026-09-10 11:00", 165, "A4", "BOARDING"),
-    ("SK315", "Airbus A320", "AMS", "CDG", "2026-09-10 10:00", "2026-09-10 11:20", 80, "C7", "DELAYED"),
-    ("SK427", "Airbus A319", "BUD", "VCE", "2026-09-10 07:45", "2026-09-10 09:00", 75, "D2", "ON TIME"),
-    ("SK588", "Boeing 737", "MAD", "LIS", "2026-09-10 12:00", "2026-09-10 12:10", 70, "B8", "ON TIME"),
-    ("SK612", "Airbus A321", "MUC", "BCN", "2026-09-10 14:20", "2026-09-10 16:00", 100, "A1", "DELAYED"),
-    ("SK733", "Boeing 737", "CDG", "ATH", "2026-09-10 06:50", "2026-09-10 10:10", 200, "C3", "DEPARTED"),
-    ("SK849", "Airbus A320", "FRA", "CPH", "2026-09-10 16:30", "2026-09-10 18:00", 90, "B5", "ON TIME"),
-    ("SK901", "Airbus A320", "ORY", "MXP", "2026-09-10 18:00", "2026-09-10 19:15", 75, "D9", "ON TIME"),
-    ("SK1024", "Airbus A319", "VIE", "WAW", "2026-09-10 20:10", "2026-09-10 21:30", 80, "A6", "LANDED"),
+flight_definitions = [
+    ("SK101", "Airbus A330", "JFK", "TLV", -6, 620, "B12", "ON TIME"),
+    ("SK204", "Airbus A220-100", "FCO", "LCY", 0,  165, "A4", "BOARDING"),
+    ("SK315", "Airbus A320", "AMS", "CDG", 1, 80, "C7", "DELAYED"),
+    ("SK427", "Airbus A319", "BUD", "VCE", 2, 75, "D2", "ON TIME"),
+    ("SK588", "Boeing 737", "MAD", "LIS", 3, 70, "B8", "ON TIME"),
+    ("SK612", "Airbus A321", "MUC", "BCN", 4, 100, "A1", "DELAYED"),
+    ("SK733", "Boeing 737", "CDG", "ATH", -1, 200, "C3", "DEPARTED"),
+    ("SK849", "Airbus A320", "FRA", "CPH", 6, 90, "B5", "ON TIME"),
+    ("SK901", "Airbus A320", "ORY", "MXP", 8, 75, "D9", "ON TIME"),
+    ("SK1024", "Airbus A319", "VIE", "WAW", -3, 80, "A6", "LANDED"),
 
 ]
+
+def build_flights():
+    # Converts each flight_definitions entry into a full row with computed timestamps.
+    flights = []
+    for flight_number, aircraft_type, origin, destination, hours_from_now, duration, gate, status in flight_definitions:
+        departure = NOW + timedelta(hours = hours_from_now)
+        arrival = departure + timedelta(minutes = duration)
+        flights.append((
+            flight_number, aircraft_type, origin, destination,
+            departure.strftime("%Y-%m-%d %H:%M"),
+            arrival.strftime("%Y-%m-%d %H:%M"),
+            duration, gate, status
+        ))
+    return flights
+
 
 def seed_database():
     # sqlite3.connect() opens a connection to the database file.
@@ -46,7 +65,7 @@ def seed_database():
         (flight_number, aircraft_type, origin, destination, departure_time, arrival_time, duration_minutes, gate, status)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
-        flights
+        build_flights()
     )
 
     conn.commit() # commit() saves all the changes (table creation + inserted rows) permanently to the .db file

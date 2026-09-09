@@ -66,3 +66,13 @@ def handle_message(text, role):
         "allowed" : True,
         "response" : result["messages"][-1].content
     }
+
+if __name__ == "__main__":
+    text = "What's the status of flight SK315?"
+
+    category = classify_message(text)
+    print("Classified as:", category)
+
+    result = agent.invoke({"messages": [("user", text)]})
+    for msg in result["messages"]:
+        print(type(msg).__name__, "-", msg.content if hasattr(msg, "content") else msg)

@@ -41,3 +41,29 @@ def classify_message(text):
     predicted_id = outputs.logits.argmax(dim = 1).item()
 
     return id2label[predicted_id]
+
+
+def handle_message(text, role):
+    """
+    Full pipeline for an incoming message: classifies it, checks whether
+    the given role is allowed to access that category, and either returns
+    an access-denied response or forwards the message to the agent.
+    """
+    category = classify_message(text)
+
+    if not is_allowed(role, category):
+
+        return: {
+            "category" : category,
+            "allowed" : False,
+            "response" : f"Access denied: your role does not have permission to access {category} requests."
+        }
+
+    result = agent.invoke({"mwssage" : [("user", text)]})
+
+    return {
+        "categorry" : category,
+        "allowed" : True,
+        "respons" : result["message"][-1].content
+    }
+

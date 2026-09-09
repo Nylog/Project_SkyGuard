@@ -59,7 +59,7 @@ def handle_message(text, role):
             "response" : f"Access denied: your role does not have permission to access {category} requests."
         }
 
-    result = agent.invoke({"message" : [("user", text)]})
+    result = agent.invoke({"messages" : [("user", text)]})
 
     return {
         "category" : category,

@@ -36,3 +36,6 @@ def seed_users():
     conn.close()
     print("Test user created: guest_user / admin_user")
 
+
+if __name__ == "__main__":
+    seed_users()

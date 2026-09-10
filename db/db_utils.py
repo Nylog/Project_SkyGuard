@@ -58,3 +58,12 @@ def update_flight_status(flight_number, new_status):
     updated = cursor.rowcount > 0 # rowcount tells us how many rows were actually changed
     conn.close()
     return updated # True if the flight existed and was updated, False otherwise
+
+
+def get_user_by_username(username):
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM users WHERE username = ?", (username))
+    row = cursor.fetchone()
+    conn.close()
+    return dict(row) if row else None

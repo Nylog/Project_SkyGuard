@@ -43,3 +43,13 @@ def login():
 
     return jsonify({"success": True, "role": user["role"]})
 
+
+@auth_bp.route("/logout", methods = ["POST"])
+def logout():
+    """
+    Clears the current session, logging the user out
+    """
+
+    session.clear() # remove all session data, effectively logging the user out
+    return jsonify({"success" : True})
+

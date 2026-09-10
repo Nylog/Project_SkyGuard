@@ -63,7 +63,7 @@ def update_flight_status(flight_number, new_status):
 def get_user_by_username(username):
     conn = get_connection()
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM users WHERE username = ?", (username))
+    cursor.execute("SELECT * FROM users WHERE username = ?", (username,))
     row = cursor.fetchone()
     conn.close()
     return dict(row) if row else None

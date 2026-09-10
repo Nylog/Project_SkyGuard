@@ -8,3 +8,23 @@ from agent.router import handle_message
 
 chat_bp = Blueprint("chat", __name__)
 
+@chat_bp.route("/chat", methods = ["POST"])
+def chat():
+    """
+    Receives a chat message from the logged-in user, forwards it to the
+    agent pipeline along with the user's role, and returns the response.
+    Returns a 401 if no user is currently logged in.
+    """
+
+    if "username" not in session:
+        return jsonify({"error": "Not logged in"}), 401 # ensure the request comes from an authenticated session
+
+
+    # Extract payload and user role for contextual processing
+    data = request.get_json() 
+    text = data.get("message")
+    role = session["role"]
+
+    result = handle_message(text, role)
+
+    return jsonify(result)

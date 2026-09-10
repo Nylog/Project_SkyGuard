@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skyguard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Login view: shown by default, hidden after a successful login -->
+     <div id="login-view">
+        <h1>Skyguard Login</h1>
+        <input type="text" id="username" placeholder="Username">
+        <input type="text" id="password" placeholder="password">
+        <button id="login-button">Log in</button>
+        <p id="login-error"></p>  <!-- Filled with an error message by script.js on failed login -->
+
+
+        <p class="notes">
+            Credentials: Guest : guest_user / guest_1234 - Admin : admin_user /admin_1234 
+        </p>
+     </div>
+
+
+     <!-- Chat view: hidden by default (see class="hidden" in style.css), shown after a successful login -->
+      <div id="chat-view">
+        <div id chat-header>
+            <span id="logged-in-as"></span> <!-- Filled by script.js with the logged-in username/role -->
+            <button id="logout-button">Log out</button>
+        </div>
+
+        <div id="chat-messages"></div> <!-- script.js appends each new message here -->
+
+        <div id="chat-input-area">
+            <input type="text" id="chat-input" placeholder="type a message...">
+            <button id="send-button">Send</button>
+
+        </div>
+      </div>
+
+      <script src="js/script.js"></script>
+
+
+
+</body>
+</html>

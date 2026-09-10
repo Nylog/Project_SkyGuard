@@ -13,7 +13,11 @@ from langgraph.prebuilt import create_react_agent
 # If this stops working in the future, switch to:
 # from langchain.agents import create_agent
 
-from tools import get_flight_status
+from agent.tools import get_flight_status
+
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 SYSTEM_PROMPT = """
 You are Skyguard, the operational assistant for Celestial Line.

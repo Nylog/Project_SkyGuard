@@ -5,3 +5,6 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 from agent.router import handle_message
+
+chat_bp = Blueprint("chat", __name__)
+

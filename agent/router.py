@@ -1,9 +1,12 @@
+import sys
 from pathlib import Path
+sys.path.append(str(Path(__file__).resolve().parent.parent))
+
 import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
-from roles import is_allowed
-from graph import agent
+from agent.roles import is_allowed
+from agent.graph import agent
 
 MODEL_DIR = Path(__file__).resolve().parent.parent / "models" / "bert_classifier"
 

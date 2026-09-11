@@ -1,3 +1,11 @@
+// If this page was opened from anywhere other than the Flask server redirect to the
+// correct address automatically, since login/chat only work through Flask.
+
+if (window.location.origin !== "http://127.0.0.1:5000") {
+    window.location.href = "http://127.0.0.1:5000";
+}
+
+
 // Grab references to all the dom elements we'll need to interract with
 
 const loginView = document.getElementById("login-view");

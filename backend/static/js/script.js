@@ -36,3 +36,16 @@ async function login() {
 
 }
 
+// Logs the user out and switches back to the login view
+
+async function logout() {
+    await fetch ("/logout", {method : "POST"});
+
+    chatView.classList.add("hidden");
+    loginView.classList.remove("hidden");
+
+    // Clear the chat history and login fields for a clean state on next login
+    chatMessage.innerHTML = "";
+    usernameInput.value = "";
+    passwordInput.value = "";
+}

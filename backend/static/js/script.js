@@ -83,3 +83,18 @@ async function sendMessage(){
     addMessage(data.resoponse, "agent")
 
 }
+
+// --- Event ---
+
+loginButton.addEventListener("click", login);
+logoutButton.addEventListener("click", logout)
+sendButton.addEventListener("click", sendMessage)
+
+// Allow pressing Enter to log in (from either username or password field).
+
+usernameInput.addEventListener("keydown", (e) => {if (e.key === "Enter") login(); })
+passwordInput.addEventListener("keydown", (e) => {if (e.key === "Enter") login(); })
+
+// Allow pressing Enter to send a chat message.
+
+chatInput.addEventListener(("keydown", (e) => {if (e.key === "Enter") sendMessage(); }))

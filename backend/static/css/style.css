@@ -60,12 +60,12 @@ body {
 }
 
 .message.user {
-    background-color:cadetblue;
+    background-color:azure;
     text-align: right;
 }
 
 .message.agent {
-    background-color:darkmagenta;
+    background-color:cornsilk;
     text-align: left;
 }
 

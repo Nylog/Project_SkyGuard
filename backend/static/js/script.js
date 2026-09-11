@@ -49,3 +49,17 @@ async function logout() {
     usernameInput.value = "";
     passwordInput.value = "";
 }
+
+// Adds a message bubble to the chat history.
+// sender is either "user" or "agent", used to style the bubble accordingly.
+
+function addMessage(text, sender){
+    const messageDiv = document.createElement("div");
+    messageDiv.classList.add("message", sender);
+    messageDiv.textContent = text;
+    chatMessage.appendChild(messageDiv);
+
+    // Auto-scroll to the latest message.
+    chatMessage.scrollTop = chatMessage.scrollHeight;
+}
+

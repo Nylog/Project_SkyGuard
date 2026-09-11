@@ -11,7 +11,7 @@ const loginError = document.getElementById("login-error");
 const loggedInAs = document.getElementById("logged-in-as");
 const logoutButton = document.getElementById("logout-button");
 
-const chatMessage = document.getElementById("chat-message");
+const chatMessage = document.getElementById("chat-messages");
 const chatInput = document.getElementById("chat-input");
 const sendButton = document.getElementById("send-button");
 
@@ -28,8 +28,15 @@ async function login() {
         }),
     });
 
+    const data = await response.json();
+    
+    if (!data.success) {
+        loginError.textContent = data.message;
+        return
+    }
+
     loginError.textContent = "";
-    loggedInAs.textContent  = 'Logged in as ${usernameInput.value} (${data.role})';
+    loggedInAs.textContent  = `Logged in as ${usernameInput.value} (${data.role})`;
 
     loginView.classList.add("hidden");
     chatView.classList.remove("hidden");
@@ -74,13 +81,13 @@ async function sendMessage(){
 
     const response = await fetch("/chat", {
         method : "POST",
-        headers : {"Content-type" : "application/json"},
+        headers : {"Content-Type" : "application/json"},
         body : JSON.stringify({"message" : text}),
 
     });
     
     const data = await response.json();
-    addMessage(data.resoponse, "agent")
+    addMessage(data.response, "agent")
 
 }
 
@@ -97,4 +104,4 @@ passwordInput.addEventListener("keydown", (e) => {if (e.key === "Enter") login()
 
 // Allow pressing Enter to send a chat message.
 
-chatInput.addEventListener(("keydown", (e) => {if (e.key === "Enter") sendMessage(); }))
+chatInput.addEventListener("keydown", (e) => {if (e.key === "Enter") sendMessage(); })

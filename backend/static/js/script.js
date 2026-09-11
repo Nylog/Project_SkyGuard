@@ -21,7 +21,7 @@ const sendButton = document.getElementById("send-button");
 async function login() {
     const response = await fetch("/login", {
         method : "POST",
-        headers : {"Content-Type" : "application/json"}
+        headers : {"Content-Type" : "application/json"},
         body : JSON.stringify({
             username: usernameInput.value,
             password: passwordInput.value,
@@ -63,3 +63,23 @@ function addMessage(text, sender){
     chatMessage.scrollTop = chatMessage.scrollHeight;
 }
 
+// Sends the current chat input to the backend and displays the response.
+
+async function sendMessage(){
+    const text = chatInput.value.trim();
+    if (text == "") return;  // ignore empty text
+
+    addMessage(text, "user");
+    chatInput.value = "";
+
+    const response = await fetch("/chat", {
+        method : "POST",
+        headers : {"Content-type" : "application/json"},
+        body : JSON.stringify({"message" : text}),
+
+    });
+    
+    const data = await response.json();
+    addMessage(data.resoponse, "agent")
+
+}

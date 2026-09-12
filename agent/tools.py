@@ -62,3 +62,25 @@ def get_flight_status(flight_number):
 
     return result # a single dictionary combining flight status and weather at both airports
 
+
+def report_lost_baggage(flight_number, description):
+    """
+    Registers a lost baggage report and returns a user-facing success confirmation
+    """
+
+    reference_number = create_baggage_report(flight_number, description)
+
+    return {"reference_number" : reference_number,
+            "message" : f"Your baggage report has been registred with reference number {reference_number}"}
+
+
+
+def check_baggage_status(reference_number):
+
+    report =get_baggage_report(reference_number)
+
+    if report is None:
+        return {"error" : f"No baggage report found with reference number {reference_number}"}
+
+    return report
+

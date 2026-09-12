@@ -43,7 +43,7 @@ def flight_status_tool(flight_number : str) -> dict:
 
 @tool
 def report_lost_baggage_tool(flight_number : str, description : str) -> dict:
-    """ Reports a lost baggage for a given flight, with a description of the item. Returns a reference number.""".
+    """ Reports a lost baggage for a given flight, with a description of the item. Returns a reference number."""
 
     return report_lost_baggage(flight_number, description)
 

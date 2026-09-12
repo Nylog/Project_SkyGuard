@@ -94,3 +94,15 @@ def create_baggage_report(flight_number, description):
     conn.close()
 
     return reference_number
+
+
+def get_baggage_report(reference_number):
+    # Retrieves a baggage report from the database by its unique reference number.
+
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM baggage_reports WHERE reference_number =?", (reference_number,))
+    row = cursor.fetchone()
+    conn.close()
+
+    return dict(row) if row else None

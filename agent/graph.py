@@ -54,9 +54,16 @@ def check_baggage_status_tool(reference_number : str) -> dict:
     """ hecks the status of a previously reported lost baggage, given its reference number."""
     return check_baggage_status(reference_number)
 
+@tool
+def calculate_fuel_load_tool(flight_number : str, passengers : int) -> dict:
+    """Calculates the estimated fuel load (in liters) for a flight, given the number of passengers. Admin only."""
+    return calculate_fuel_load(flight_number, passengers)
+
 
 llm = ChatOllama(model = "qwen2.5:7b-instruct", temperature = 0)
 
 agent = create_react_agent(llm, tools = [flight_status_tool, report_lost_baggage_tool, check_baggage_status_tool], prompt = SYSTEM_PROMPT)
 # If this stops working in the future, switch to:
 # agent = create_agent(llm, tools = [flight_status_tool], system_prompt = SYSTEM_PROMPT)
+
+

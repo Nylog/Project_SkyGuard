@@ -2,3 +2,6 @@
 models/training_logs/
 models/bert_classifier/
 data/flights.db
+
+__pycache__/
+*.pyc

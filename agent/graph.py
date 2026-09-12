@@ -54,6 +54,7 @@ def check_baggage_status_tool(reference_number : str) -> dict:
     """ hecks the status of a previously reported lost baggage, given its reference number."""
     return check_baggage_status(reference_number)
 
+
 @tool
 def calculate_fuel_load_tool(flight_number : str, passengers : int) -> dict:
     """Calculates the estimated fuel load (in liters) for a flight, given the number of passengers. Admin only."""
@@ -62,8 +63,22 @@ def calculate_fuel_load_tool(flight_number : str, passengers : int) -> dict:
 
 llm = ChatOllama(model = "qwen2.5:7b-instruct", temperature = 0)
 
-agent = create_react_agent(llm, tools = [flight_status_tool, report_lost_baggage_tool, check_baggage_status_tool], prompt = SYSTEM_PROMPT)
+BASE_TOOLS = [flight_status_tool, report_lost_baggage_tool, check_baggage_status_tool]
+ADMIN_TOOLS = [calculate_fuel_load_tool]
+
+def build_agent(role):
+    """
+    Builds an agent with the tool set appropriate for the given role.
+    Admin-only tools (like fuel calculation) are only included when role == "admin",
+    so the LLM cannot call them at all for other roles
+    """
+     
+    tools = BASE_TOOLS.copy()
+
+    if role == "admin":
+        tools += ADMIN_TOOLS
+
+    return create_react_agent(llm, tools = tools, prompt = SYSTEM_PROMPT )
 # If this stops working in the future, switch to:
 # agent = create_agent(llm, tools = [flight_status_tool], system_prompt = SYSTEM_PROMPT)
-
 

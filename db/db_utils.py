@@ -20,6 +20,9 @@ import sqlite3
 BASE_DIR = Path(__file__).resolve().parent.parent
 DB_PATH = BASE_DIR / "data" / "flights.db"
 
+from datetime import datetime
+import random
+
 
 def get_connection():
     conn = sqlite3.connect(DB_PATH)   # open a connection to the database file
@@ -67,3 +70,13 @@ def get_user_by_username(username):
     row = cursor.fetchone()
     conn.close()
     return dict(row) if row else None
+
+
+def generate_reference_number():
+    # Generates a unique reference code for a baggage item.
+    #  The code follows the format 'BAG-YYYY-NNNN', where YYYY is the current year and NNNN is a random 4-digit number.
+    year = datetime.now().year
+    random_digits = random.randint(1000, 9999)  # Small risk of collision within the same year. DB schema enforces UNIQUE.
+
+    return f"BAG-{year}-{random_digits}"
+

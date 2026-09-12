@@ -13,21 +13,6 @@
 
 ## New agent tools
 
-### Tool: calculate_fuel_load (admin only)
-- Formula: (distance_km * 0.5) + (passengers * 20) = liters of fuel
-- Example: 1000 km, 50 passengers → 500 + 1000 = 1500 liters
-- Access: MAINTENANCE category, admin role only (same permission logic as
-  existing MAINTENANCE messages)
-- Needs: distance between origin/destination airports, and number
-  of passengers
-
-### Tool: lost baggage reporting (guest/service)
-- New table in the database to actually store reports,
-  not just have the agent respond conversationally without saving anything
-- Tool: report_lost_baggage(flight_number, description) → saves the report,
-  returns a reference number (e.g. "BAG-2026-0042")
-- Access: SERVICE category, available to guest role
-
 ### Tool: seat map / amenities lookup (guest/service) — LARGER SCOPE, needs its own planning
 - New table linked to aircraft_type:
   seat_number,

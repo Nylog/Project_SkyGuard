@@ -21,3 +21,14 @@ CREATE TABLE IF NOT EXISTS users (
     role TEXT NOT NULL DEFAULT 'guest'
         CHECK (role IN ('guest', 'admin'))
 );
+
+
+CREATE TABLE IF NOT EXISTS baggage_reports (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    reference_number TEXT NOT NULL UNIQUE,
+    flight_number TEXT NOT NULL,
+    description TEXT NOT NULL,
+    status TEXT NOT NULL DEFAULT 'REPORTED'
+        CHECK (status IN ('REPORTED', 'IN PROGRESS', 'FOUND', 'CLOSED')),
+    FOREIGN KEY (flight_number) REFERENCES flights(flight_number)
+);

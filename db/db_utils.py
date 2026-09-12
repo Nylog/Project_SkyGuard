@@ -80,3 +80,17 @@ def generate_reference_number():
 
     return f"BAG-{year}-{random_digits}"
 
+
+def create_baggage_report(flight_number, description):
+    # Creates a new baggage report in the database with a generated reference number.
+    reference_number = generate_reference_number()
+
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("INSERT INTO baggage_reports (reference_number, flight_number, description) VALUES (?, ?, ?)",
+                   (reference_number, flight_number, description)
+                   )
+    conn.commit()
+    conn.close()
+
+    return reference_number

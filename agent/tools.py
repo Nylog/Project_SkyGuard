@@ -97,7 +97,7 @@ def calculate_distance_km(origin_code, destination_code):
     lat_1, lon_1 = Airports_coordinates(origin_code)
     lat_2, lon_2 = Airports_coordinates(destination_code)
 
-    R = 6371   # Earth's radius in km
+    R = 6371   # Earth's radius in km (from wikipedia)
 
     lat_1, lon_1, lat_2, lon_2 = map(radians, [lat_1, lon_1, lat_2, lon_2])
     d_lat = lat_2 - lat_1
@@ -110,3 +110,28 @@ def calculate_distance_km(origin_code, destination_code):
     c = 2 * atan2(sqrt(a), sqrt(1 - a))
 
     return R * c
+
+
+def calculate_fuel_load(flight_number, passengers):
+    """
+    Calculates estimated fuel load (in liters) for a flight, based on
+    distance between origin and destination, and number of passengers.
+
+    Formula: (distance_km * 0.5) + (passengers * 20)
+    """
+
+    flight = get_flight_by_number(flight_number)
+
+    if flight is None:
+        return {"error" : f"No flight found with number {flight_number}"}
+
+    distance_km = calculate_distance_km(flight["origin"], flight["destination"])
+
+    fuel_liters = (distance_km  * 0.5) + (passengers * 20)
+
+    return {
+        "flight_number" : flight_number,
+        "distance_km" : round(distance_km, 1),
+        "passengers" : passengers,
+        "fuel_liters" : round(fuel_liters, 1)
+    }

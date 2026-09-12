@@ -13,11 +13,13 @@ from langgraph.prebuilt import create_react_agent
 # If this stops working in the future, switch to:
 # from langchain.agents import create_agent
 
-from agent.tools import get_flight_status, report_lost_baggage, check_baggage_status
+from agent.tools import get_flight_status, report_lost_baggage, check_baggage_status, calculate_fuel_load
 
 import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
+
+
 
 SYSTEM_PROMPT = """
 You are Skyguard, the operational assistant for Celestial Line.
@@ -44,7 +46,6 @@ def flight_status_tool(flight_number : str) -> dict:
 @tool
 def report_lost_baggage_tool(flight_number : str, description : str) -> dict:
     """ Reports a lost baggage for a given flight, with a description of the item. Returns a reference number."""
-
     return report_lost_baggage(flight_number, description)
 
 

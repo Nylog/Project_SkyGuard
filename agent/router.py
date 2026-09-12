@@ -6,7 +6,7 @@ import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
 from agent.roles import is_allowed
-from agent.graph import agent
+from agent.graph import build_agent
 
 MODEL_DIR = Path(__file__).resolve().parent.parent / "models" / "bert_classifier"
 
@@ -62,6 +62,7 @@ def handle_message(text, role):
             "response" : f"Access denied: your role does not have permission to access {category} requests."
         }
 
+    agent = build_agent(role)
     result = agent.invoke({"messages" : [("user", text)]})
 
     return {
@@ -70,12 +71,21 @@ def handle_message(text, role):
         "response" : result["messages"][-1].content
     }
 
-if __name__ == "__main__":
-    text = "What's the status of flight SK315?"
 
-    category = classify_message(text)
-    print("Classified as:", category)
+# if __name__ == "__main__":
+#     text = "What's the status of flight SK315?"
 
-    result = agent.invoke({"messages": [("user", text)]})
-    for msg in result["messages"]:
-        print(type(msg).__name__, "-", msg.content if hasattr(msg, "content") else msg)
+#     category = classify_message(text)
+#     print("Classified as:", category)
+
+#     agent = build_agent(role)
+#     result = agent.invoke({"messages": [("user", text)]})
+#     for msg in result["messages"]:
+#         print(type(msg).__name__, "-", msg.content if hasattr(msg, "content") else msg)
+
+# if __name__ == "__main__":
+#     print(handle_message("Calculate fuel for flight SK315 with 150 passengers", "admin"))
+#     print(handle_message("Calculate fuel for flight SK315 with 150 passengers", "guest"))
+
+
+

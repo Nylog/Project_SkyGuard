@@ -47,6 +47,11 @@ def report_lost_baggage_tool(flight_number : str, description : str) -> dict:
     return report_lost_baggage(flight_number, description)
 
 
+@tool
+def check_baggage_status_tool(reference_number : str) -> dict:
+    """ hecks the status of a previously reported lost baggage, given its reference number."""
+    return check_baggage_status(reference_number)
+
 
 llm = ChatOllama(model = "qwen2.5:7b-instruct", temperature = 0)
 

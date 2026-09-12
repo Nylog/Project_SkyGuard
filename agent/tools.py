@@ -94,8 +94,8 @@ def calculate_distance_km(origin_code, destination_code):
     using their coordinates and the Haversine formula.
     """
 
-    lat_1, lon_1 = Airports_coordinates(origin_code)
-    lat_2, lon_2 = Airports_coordinates(destination_code)
+    lat_1, lon_1 = Airports_coordinates[origin_code]
+    lat_2, lon_2 = Airports_coordinates[destination_code]
 
     R = 6371   # Earth's radius in km (from wikipedia)
 

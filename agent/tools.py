@@ -18,6 +18,9 @@ sys.path.append(str(Path(__file__).resolve().parent.parent))
 from db.db_utils import get_flight_by_number, create_baggage_report, get_baggage_report
 from agent.weather import get_weather, interpret_departure_weather, get_destination_weather_info
 
+from math import radians, sin, cos, sqrt, atan2
+from agent.weather import Airports_coordinates
+
 def get_flight_status(flight_number):
     """
     Retrieves full flight info from the database, plus current weather

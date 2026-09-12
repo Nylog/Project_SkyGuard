@@ -87,3 +87,26 @@ def check_baggage_status(reference_number):
 
     return report
 
+
+def calculate_distance_km(origin_code, destination_code):
+    """
+    Calculates the great-circle distance (in km) between two airports,
+    using their coordinates and the Haversine formula.
+    """
+
+    lat_1, lon_1 = Airports_coordinates(origin_code)
+    lat_2, lon_2 = Airports_coordinates(destination_code)
+
+    R = 6371   # Earth's radius in km
+
+    lat_1, lon_1, lat_2, lon_2 = map(radians, [lat_1, lon_1, lat_2, lon_2])
+    d_lat = lat_2 - lat_1
+    d_lon = lon_2 - lon_1
+
+    # 'a' is the square of the half-chord length between the two points
+    a = sin(d_lat / 2) ** 2 + cos(lat_1) * cos(lat_2) * sin(d_lon / 2) ** 2
+
+    # 'c' is the central angle between the points, expressed in radians
+    c = 2 * atan2(sqrt(a), sqrt(1 - a))
+
+    return R * c

@@ -39,6 +39,15 @@ def flight_status_tool(flight_number : str) -> dict:
         return {"error" : f"No flight found with number: {flight_number}"}
     return result
 
+
+@tool
+def report_lost_baggage_tool(flight_number : str, description : str) -> dict:
+    """ Reports a lost baggage for a given flight, with a description of the item. Returns a reference number.""".
+
+    return report_lost_baggage(flight_number, description)
+
+
+
 llm = ChatOllama(model = "qwen2.5:7b-instruct", temperature = 0)
 
 agent = create_react_agent(llm, tools = [flight_status_tool], prompt = SYSTEM_PROMPT)

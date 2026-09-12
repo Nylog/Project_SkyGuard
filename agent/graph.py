@@ -55,6 +55,6 @@ def check_baggage_status_tool(reference_number : str) -> dict:
 
 llm = ChatOllama(model = "qwen2.5:7b-instruct", temperature = 0)
 
-agent = create_react_agent(llm, tools = [flight_status_tool], prompt = SYSTEM_PROMPT)
+agent = create_react_agent(llm, tools = [flight_status_tool, report_lost_baggage_tool, check_baggage_status_tool], prompt = SYSTEM_PROMPT)
 # If this stops working in the future, switch to:
 # agent = create_agent(llm, tools = [flight_status_tool], system_prompt = SYSTEM_PROMPT)

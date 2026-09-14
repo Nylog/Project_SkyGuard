@@ -3,14 +3,6 @@
 ## Documentation
 - [ ] Write the README.md (project overview, architecture, setup instructions, credentials)
 
-## Dataset
-- [ ] Expand the training dataset
-- [ ] Check for near-duplicate phrases before adding to the dataset
-- [ ] Re-run the training notebook once the dataset is expanded
-- [ ] Investigate the 100% test accuracy from the first training run — check for
-      possible data leakage (train/test phrases too similar) before trusting it
-      as a final result
-
 ## New agent tools
 
 ### Tool: seat map / amenities lookup (guest/service) — LARGER SCOPE, needs its own planning

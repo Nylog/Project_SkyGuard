@@ -1,60 +1,194 @@
 text,label
-Engineering team confirms the transponder on flight SK588 has been repaired and cleared for departure.,MAINTENANCE
-"We're seeing smoke coming from the lavatory, possible fire, crew is fighting it with extinguishers now.",SOS
-Passenger in seat 15F is asking for a headset for the in-flight entertainment system.,SERVICE
-Routine check on flight FR1127 revealed that the windshield heater requires servicing.,MAINTENANCE
-The hydraulic pump on flight SK849 needs to be inspected before the next flight.,MAINTENANCE
-"Flight LH445 squawking 7700, a bomb threat report.",SOS
-"We have a fire indication in the cargo hold on flight FR1127, initiating emergency procedures.",SOS
-"Security threat reported on board flight SK101, requesting law enforcement at the gate on arrival.",SOS
-"Flight SK901 has lost cabin pressure, oxygen masks deployed, requesting emergency descent clearance.",SOS
-"Passenger in seat 21B is unresponsive, Dr. Reyes on board is a doctor and is assisting, flight SK901 needs paramedics on arrival.",SOS
-The de-icing system on the aircraft assigned to flight TP891 needs replacement before next departure.,MAINTENANCE
-"Mayday, mayday, we have a lightning strike with system damage on board flight LX903, requesting immediate assistance.",SOS
-"We have a fire indication in the cargo hold on flight SK612, initiating emergency procedures.",SOS
-Passenger in seat 9C would like the window shade adjusted for flight OS1015.,SERVICE
-Pre-flight check on flight AF337 found that the flap actuator logged an error during the last cycle.,MAINTENANCE
-"Mayday, mayday, we have a bomb threat report on board flight SK315, requesting immediate assistance.",SOS
-"Could you assist Dr. Reyes with stowing luggage in the overhead bin, seat 21B?",SERVICE
-"Ms. Novak would like to change seats on flight LX903, is that possible?",SERVICE
-Dr. Reyes on flight SK733 would like to know the connecting gate for their next flight.,SERVICE
-"Is there any chance of getting a vegetarian meal, I think I forgot to request one when booking?",SERVICE
-The APU on the aircraft assigned to flight LH445 needs replacement before next departure.,MAINTENANCE
-Tech ops flagged an issue with the cabin pressurization controller during the routine check.,MAINTENANCE
-"Flight KL556 reports a door warning light illuminated in flight, declaring an emergency as a precaution.",SOS
-"This is flight OS1015, we have smoke in the cockpit, declaring an emergency.",SOS
-Mr. Anderson on flight LH445 would like to know the connecting gate for their next flight.,SERVICE
-Could you check if there's a spare charging cable for seat 2A?,SERVICE
-"One of the emergency exit lights isn't illuminating, this needs to be fixed before the next flight.",MAINTENANCE
-"Could the reading light above seat 27C be checked, it doesn't seem to switch on?",SERVICE
-Flight SK901 is grounded until the navigation display is inspected and cleared.,MAINTENANCE
-"One of the overhead bins won't latch properly, it's a minor fix but needs to be addressed.",MAINTENANCE
-The man in 9F would like to know if there's a way to request a quieter seat for his return trip.,SERVICE
-Could we get some more napkins for row 21B on flight SK101?,SERVICE
-Mrs. Costa in seat 3C would like a second cup of coffee.,SERVICE
-Could we get some more napkins for row 3C on flight AF337?,SERVICE
-A passenger is asking whether pets are allowed to be taken out of their carrier during the flight.,SERVICE
-Flight LX903 is grounded until the avionics bay cooling fan is recalibrated.,MAINTENANCE
+Can you tell me if strollers are allowed to be checked at the gate?,SERVICE
+The aircraft has suffered an uncontained engine failure with debris striking the fuselage.,SOS
+"We have an uncontained engine failure on flight TP891, requesting emergency services on the runway.",SOS
+We have a rapid fuel leak from the left wing and are declaring an emergency.,SOS
+"Emergency on flight SK901: a lightning strike with system damage, we need medical personnel on standby at the gate.",SOS
+A spare bulb is needed for one of the taxi light fixtures.,MAINTENANCE
+Do you offer priority boarding for this fare class?,SERVICE
+We've suffered a dual generator failure and are now on emergency battery power only.,SOS
+In-flight entertainment system.,SERVICE
+The aircraft's static wick needs replacement after inspection.,MAINTENANCE
+Refund for a flight cancelled due to weather.,SERVICE
+Could someone assist with lifting a heavy bag into the overhead bin in row 30?,SERVICE
+Flight FR1127 experienced a minor technical fault: landing gear indicator shows a fault code that requires ground maintenance.,MAINTENANCE
+Can you help me understand the baggage allowance for a connecting international flight?,SERVICE
+Please schedule an inspection of the avionics bay cooling fan before flight SK1024 departs.,MAINTENANCE
+The number two engine's fan blade shows minor nicking consistent with normal wear.,MAINTENANCE
+Cabin crew reports a passenger attempting to open an emergency exit mid-flight.,SOS
+"Viscous fan clutch slipping, insufficient cooling.",MAINTENANCE
+Could you tell me if the airline offers any loyalty perks for booking directly on the website?,SERVICE
+Could you confirm the maximum size allowed for a personal item under the seat?,SERVICE
+Frequent flyer number registration.,SERVICE
+"Pitot tube frozen, airspeed indicators unreliable!",SOS
+"Emergency on flight SK588: a landing gear malfunction, we need medical personnel on standby at the gate.",SOS
+Could you let me know if this flight has vegetarian meal options available?,SERVICE
+The windshield heater on the aircraft assigned to flight TP891 needs replacement before next departure.,MAINTENANCE
+Where can I find a luggage cart?,SERVICE
+We're reporting an active fire that has spread to the overhead oxygen system.,SOS
+Pre-flight check on flight SK204 found that the APU is making an unusual vibration during taxi.,MAINTENANCE
+I'd like to know if there's a way to track my checked baggage in real time.,SERVICE
+"I think I lost my phone somewhere near the gate, could someone help me look for it?",SERVICE
+I'd like to know if there's a shuttle service between the two terminals.,SERVICE
 "Medical emergency: passenger in seat 21B on flight SK101 is having a seizure, requesting priority handling.",SOS
-"Maintenance team, please check the landing gear indicator on aircraft operating flight SK204, it triggered a caution message on the ECAM.",MAINTENANCE
-We have declared an emergency on flight SK101 due to a medical emergency.,SOS
+What's the baggage limit for this fare?,SERVICE
+"Passenger in seat 28A on flight SK901 would like an extra blanket, please.",SERVICE
+Ground engineers are inspecting a minor oil stain found near the engine pylon.,MAINTENANCE
+Is there a designated smoking area just outside this terminal?,SERVICE
+"We've lost calibration on the number two fuel gauge, readings are unreliable.",MAINTENANCE
+Lounge access for frequent travelers.,SERVICE
+The number two hydraulic reservoir is reading slightly below the minimum level.,MAINTENANCE
+I'd like to know the policy for traveling with a large musical instrument like a cello.,SERVICE
+"A passenger has fallen unconscious after a suspected stroke, we need medical guidance now.",SOS
+I'd like to know if I can pre-order a specific meal for my flight tomorrow.,SERVICE
+Could I get a vegetarian meal for seat 18D on flight SK1024?,SERVICE
+We have declared an emergency on flight LH445 due to a hydraulic system failure.,SOS
+Flight SK315 is grounded until the oxygen mask deployment system is recalibrated.,MAINTENANCE
+"Cooling fan blade bent, balance compromised.",MAINTENANCE
+The number two hydraulic filter is due for replacement at the next check.,MAINTENANCE
+Looking for the boarding gate of a connecting flight.,SERVICE
+Mr. Haddad in seat 7B is asking about the in-flight Wi-Fi on flight SK588.,SERVICE
+We have confirmed volcanic ash ahead on our route and are requesting an immediate reroute.,SOS
+Routine check on flight FR1127 revealed that the windshield heater requires servicing.,MAINTENANCE
+"A couple in row 20 asked whether they could be seated together, they were separated during booking.",SERVICE
+"Flight SK588 reports a door warning light illuminated in flight, declaring an emergency as a precaution.",SOS
 The seatbelt sign switch is sticking and occasionally doesn't turn off properly.,MAINTENANCE
-"Flight SK849 squawking 7700, a rapid decompression.",SOS
-"This is flight SK612, we have smoke in the cockpit, declaring an emergency.",SOS
-Could you check if there's a spare charging cable for seat 3C?,SERVICE
-"The weather radar was giving an intermittent blank screen during the descent, please have it looked at.",MAINTENANCE
-Could we get some more napkins for row 3C on flight SK901?,SERVICE
-"Severe turbulence has caused injuries on flight IB672, cabin crew requesting medical team at the gate.",SOS
-"Flight SK588 reports a passenger with chest pain in seat 18D, requesting priority landing and ambulance.",SOS
+Transmission viscous fan damaged.,MAINTENANCE
+Is it possible to add travel insurance after the initial booking was already made?,SERVICE
+Smoke reported in engine compartment number 1!,SOS
+Flight SK1024 delayed due to a required check of the de-icing system.,MAINTENANCE
+"Engine fire, shutting it down now.",SOS
+There's a minor discrepancy in the fuel flow reading between engines.,MAINTENANCE
+Could someone assist me with printing my visa documents at the counter?,SERVICE
+A passenger is missing from their seat and cannot be located anywhere on board.,SOS
+Could you help me understand the refund timeline after a voluntary cancellation?,SERVICE
+"Flight SK427 has lost cabin pressure, oxygen masks deployed, requesting emergency descent clearance.",SOS
+"Hydraulic seals deteriorated, minor leaks being monitored.",MAINTENANCE
+"Captain requests emergency descent on flight SK901, an engine fire.",SOS
+"Emergency on flight SK427: a severe fuel leak, we need medical personnel on standby at the gate.",SOS
+"Cabin humidity control is malfunctioning, producing excessive condensation.",MAINTENANCE
+An emergency exit sign light is flickering and needs to be replaced.,MAINTENANCE
+Duty-free shop items at the airport.,SERVICE
+A PA system speaker in the mid-cabin section is crackling intermittently.,MAINTENANCE
+The number one engine's vibration sensor gave an anomalous reading on shutdown.,MAINTENANCE
 "Passenger in seat 33E on flight IB672 would like an extra blanket, please.",SERVICE
-Someone would like to know if it's possible to pre-order a special meal for the return flight.,SERVICE
-Flight LX903 experienced a minor technical fault: hydraulic pump failed a pre-flight diagnostic check.,MAINTENANCE
-Mr. Petrov would like to know if duty-free items are available on flight SK315.,SERVICE
-Flight IB672 experienced a minor technical fault: landing gear indicator shows a fault code that requires ground maintenance.,MAINTENANCE
-"Maintenance team, please check the oxygen mask deployment system on aircraft operating flight AF337, it did not respond during the systems test.",MAINTENANCE
-"Would it be possible to move to an empty seat near the front, my legs need more room?",SERVICE
-The de-icing fluid sensor is giving inconsistent readings and needs recalibration.,MAINTENANCE
-"Flight FR1127 reports a passenger with chest pain in seat 21B, requesting priority landing and ambulance.",SOS
-"Maintenance log for flight SK901: landing gear indicator failed a pre-flight diagnostic check, awaiting technician sign-off.",MAINTENANCE
+Temporary baggage storage during a layover.,SERVICE
+The main cabin door indicator shows unsafe just after we reached cruising altitude.,SOS
+"Fuel filter very dirty, differential pressure near the limit.",MAINTENANCE
+We have multiple system failures cascading after a suspected electrical short.,SOS
+"Battery terminals oxidized, urgent cleaning needed.",MAINTENANCE
+The nose wheel has separated from the aircraft during the landing roll.,SOS
+A severe electrical fire has knocked out half of our cockpit displays.,SOS
+"Cabin crew reports smoke in the cabin in row 3C, requesting priority landing for flight SK204.",SOS
+"Violent passenger in the cabin, threatening the crew's safety!",SOS
+A recurring squawk on the auxiliary hydraulic pump needs further investigation.,MAINTENANCE
+We suspect a fuel contamination issue causing intermittent power loss on engine two.,SOS
+"I'd like to ask whether it's possible to request a specific type of pillow or cushion for lower back support, as I have a long flight ahead and want to make sure I'm as comfortable as possible.",SERVICE
+Pre-flight check on flight AF337 found that the flap actuator logged an error during the last cycle.,MAINTENANCE
+Is it possible to check in a surfboard or other oversized sports equipment?,SERVICE
+"Fuel gauge reading is a touch off, engineering has been notified and will check it before the next departure.",MAINTENANCE
+"Hydraulic system completely lost, total pressure loss!",SOS
+Cargo hold temperature sensor reading seems slightly inconsistent with the others.,MAINTENANCE
+The APU generator tripped once during ground operations and needs investigation.,MAINTENANCE
+Ground staff noted a slow air leak in the door seal during boarding.,MAINTENANCE
+A loose panel was found near the wingtip during the walkaround inspection.,MAINTENANCE
+I think I lost my boarding pass somewhere between check-in and the gate.,SERVICE
+Coolant thermostat stuck in the closed position.,MAINTENANCE
+We have a hijacking situation developing in the forward cabin.,SOS
+There's a fire alarm sounding in the cargo hold with confirmed heat signature.,SOS
+"Passenger doors stuck open, unable to close!",SOS
+"Pilot suffering a hypertensive crisis, unable to perform emergency maneuvers!",SOS
+A violent passenger has bitten a crew member and is being restrained.,SOS
+Is it possible to store my luggage temporarily during a long layover?,SERVICE
+"I lost track of my child's stroller after checking it at the gate, can you help locate it?",SERVICE
+Engineering team confirms the left engine sensor on flight FR1127 has been repaired and cleared for departure.,MAINTENANCE
+De-icing fluid residue has built up on an external sensor and needs cleaning.,MAINTENANCE
+Prayer and meditation spaces in the terminal.,SERVICE
+"Flight crew reports fuel is critically low after the diversion, declaring a fuel emergency.",SOS
+"One of the emergency exit lights isn't illuminating, this needs to be fixed before the next flight.",MAINTENANCE
+"Losing altitude fast, no response from controls.",SOS
+The cabin's forward galley cart brake is slightly less effective than specified.,MAINTENANCE
+"I think I lost my spot in line while stepping away, is it alright if I rejoin here?",SERVICE
+"Flexible transmission joint worn, excessive play.",MAINTENANCE
+"Fuel pressure regulator unstable, fluctuations detected.",MAINTENANCE
+"Maintenance team, please check the weather radar unit on aircraft operating flight SK101, it logged an error during the last cycle.",MAINTENANCE
+"Engine cylinder blow-by increased, abnormal oil consumption.",MAINTENANCE
+Cockpit windshield just cracked at altitude.,SOS
+Dr. Reyes in seat 21B would like a second cup of coffee.,SERVICE
+Flight LX903 experienced a minor technical fault: weather radar unit shows a fault code that requires ground maintenance.,MAINTENANCE
+"Air in the brake lines, spongy pedal.",MAINTENANCE
+Could you please dim the cabin lights for flight AF337?,SERVICE
+Is there a way to request notifications about gate changes directly to my phone?,SERVICE
+"The weather radar screen briefly blanked out mid-flight yesterday before restoring itself a few seconds later, and while it hasn't recurred since, engineering wants to run a full diagnostic before the next long-haul sector.",MAINTENANCE
+Overhead reading light switch sticks occasionally in row 30.,MAINTENANCE
+"This is flight SK612, we have smoke in the cockpit, declaring an emergency.",SOS
+Request for an infant bassinet on the flight.,SERVICE
+A worn seal on the nose gear strut has been flagged for replacement.,MAINTENANCE
+Could you help me understand how layover minimum connection times are calculated?,SERVICE
+"Could you assist Ms. Lindqvist with stowing luggage in the overhead bin, seat 18D?",SERVICE
+A software glitch caused the fuel gauge to briefly show incorrect values.,MAINTENANCE
+Line maintenance has been requested for flight AZ789 because the APU shows a fault code that requires ground maintenance.,MAINTENANCE
+"Landing gear stuck in extended position, increasing drag!",SOS
+Is there an option to select my seat now even though I already checked in?,SERVICE
+The aircraft's brakes failed completely upon landing rollout.,SOS
+There's uncontrollable vibration coming from the tail section at cruise speed.,SOS
+"There's a slight smoke smell near my seat, is that something I should be concerned about?",SERVICE
+Mr. Haddad is asking if the flight SK849 has a special assistance service at arrival.,SERVICE
+"I noticed a small spelling error in my name on the booking, can it be corrected?",SERVICE
 "Flight SK315 is experiencing rapid fuel loss, requesting immediate diversion.",SOS
-"Flight OS1015 reports a passenger with chest pain in seat 2A, requesting priority landing and ambulance.",SOS
+My tray table seems to be stuck and won't fold down properly.,SERVICE
+Fuel pump output reduced by 8%.,MAINTENANCE
+"Complete hydraulic failure, controls extremely stiff.",SOS
+"A technician flagged a slightly worn drive belt on one of the air conditioning packs during today's scheduled maintenance check, and a replacement part has been ordered for installation before the weekend.",MAINTENANCE
+Is it possible to split the payment for this ticket across two cards?,SERVICE
+"Passenger in seat 15F is unresponsive, Ms. Novak on board is a doctor and is assisting, flight KL556 needs paramedics on arrival.",SOS
+Passenger on flight SK427 would like to know when the meal service will begin.,SERVICE
+"Loss of control during turn, g-forces changing continuously!",SOS
+We've had a near miss with another aircraft at our cruising altitude.,SOS
+The aircraft's autopilot disconnected unexpectedly during severe turbulence at cruise altitude.,SOS
+The landing gear indicator on flight TP891 did not respond during the systems test.,MAINTENANCE
+Fire extinguisher pressure in the aft galley is reading below the minimum level.,MAINTENANCE
+Cockpit window shatters due to rapid decompression!,SOS
+The cargo door sensor gave an inconsistent reading during the pre-flight check.,MAINTENANCE
+There's uncontrolled flooding in the cargo hold from a burst water line.,SOS
+"This is flight SK1024, we have smoke in the cockpit, declaring an emergency.",SOS
+Engineers are investigating a warning light for the fire suppression bottle that briefly illuminated.,MAINTENANCE
+"Windshield just cracked at altitude, we're descending to a lower altitude immediately as a precaution.",SOS
+The man in 9F would like to know if there's a way to request a quieter seat for his return trip.,SERVICE
+Thick smoke is filling the cabin faster than the crew can manage it.,SOS
+"Unstable cabin pressurization, cabin altitude rising rapidly!",SOS
+One of our main landing gear tires has burst on the runway during takeoff roll.,SOS
+"Mr. Haddad would like to change seats on flight AZ789, is that possible?",SERVICE
+A stowaway has been discovered in the wheel well after landing.,SOS
+Is there a specific line for priority check-in at this counter?,SERVICE
+"We took a lightning strike and lost part of our navigation instruments, requesting vectors to the nearest suitable airport.",SOS
+There's a persistent oil seep from the auxiliary power unit that needs sealing.,MAINTENANCE
+I'd like to know if my checked bag has already been loaded onto the aircraft.,SERVICE
+"The aircraft's exterior paint is showing some fading near the engine nacelle, purely cosmetic but scheduled for touch-up during the next heavy maintenance visit.",MAINTENANCE
+Technicians are investigating a minor fuel imbalance that occurred during the last flight.,MAINTENANCE
+Passenger on board claims to have a homemade bomb!,SOS
+We have a passenger threatening self-harm in the rear lavatory and need guidance immediately.,SOS
+"Small oil spot under the left engine, nothing urgent.",MAINTENANCE
+"Could you tell me if this flight has power outlets at every seat, since I need to keep my laptop charged for a meeting right after we land?",SERVICE
+The number three tire's tread depth is approaching the recommended replacement point.,MAINTENANCE
+We've lost two of four hydraulic lines after a suspected bird strike on descent.,SOS
+Could you tell me where the nearest pharmacy is located in this terminal?,SERVICE
+Passenger in seat 9C would like the window shade adjusted for flight OS1015.,SERVICE
+I'd like to request an aisle seat closer to the front if one is available.,SERVICE
+A passenger has suffered a serious fall down the aircraft stairs during boarding.,SOS
+Could we get some more napkins for row 9C on flight SK315?,SERVICE
+Could you confirm if this airport has a fast lane for passengers with young infants?,SERVICE
+Ground staff reported a sticking door handle on the forward cargo compartment.,MAINTENANCE
+Mrs. Kovacs on flight IB672 would like to know the connecting gate for their next flight.,SERVICE
+"The APU is due for scheduled inspection, technicians have been dispatched to gate for flight SK849.",MAINTENANCE
+"One of the overhead bins won't latch properly, it's a minor fix but needs to be addressed.",MAINTENANCE
+What gate does this flight leave from?,SERVICE
+"We have a fire indication in the cargo hold on flight AF337, initiating emergency procedures.",SOS
+"There's visible wing flutter at high speed, requesting immediate speed reduction clearance.",SOS
+Is there a specific counter for special assistance requests in this terminal?,SERVICE
+We have declared an emergency on flight SK427 due to a rapid decompression.,SOS
+"The number one hydraulic pump's noise level is slightly higher than baseline, being tracked.",MAINTENANCE
+"Cargo fire warning active, can't confirm visually.",SOS
+"Flight SK1024 reports a door warning light illuminated in flight, declaring an emergency as a precaution.",SOS
+"Could you assist Mr. Anderson with stowing luggage in the overhead bin, seat 21B?",SERVICE
+What time do we land?,SERVICE

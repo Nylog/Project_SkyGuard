@@ -12,7 +12,8 @@ chat_bp = Blueprint("chat", __name__)
 def chat():
     """
     Receives a chat message from the logged-in user, forwards it to the
-    agent pipeline along with the user's role, and returns the response.
+    agent pipeline along with the user's role and recent conversation
+    history, and returns the response.
     Returns a 401 if no user is currently logged in.
     """
 
@@ -25,6 +26,15 @@ def chat():
     text = data.get("message")
     role = session["role"]
 
-    result = handle_message(text, role)
+    history = session.get("history", []) # conversation so far in this session
+    
+    result = handle_message(text, role, history)
+
+
+    # Append this turn to the session history, so future messages have context
+    history.append(["user", text])
+    history.append(["assistant", result["response"]])
+    session["history"] = history
+
 
     return jsonify(result)

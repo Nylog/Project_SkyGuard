@@ -46,13 +46,31 @@ def classify_message(text):
     return id2label[predicted_id]
 
 
-def handle_message(text, role):
+def handle_message(text, role, history = None):
     """
-    Full pipeline for an incoming message: classifies it, checks whether
+    Full pipeline for an incoming message: uses the last couple of user
+    messages as context when classifying the current message, checks whether
     the given role is allowed to access that category, and either returns
-    an access-denied response or forwards the message to the agent.
+    an access-denied response or forwards the full conversation history to the agent.
     """
-    category = classify_message(text)
+
+    history = history or []
+
+    # Last 2 user messages before this one, used only to give the classifier
+    # a bit of context — not the full history, since BERT was trained on
+    # short standalone phrases, not long conversations.
+    recent_user_messages = []
+
+    for h in history :
+        if h[0] == "user":
+            recent_user_messages.append(h[1])
+
+    recent_user_messages = recent_user_messages[-2:]
+
+    classification_input = " ".join(recent_user_messages + [text])
+
+
+    category = classify_message(classification_input)
 
     if not is_allowed(role, category):
 
@@ -62,8 +80,17 @@ def handle_message(text, role):
             "response" : f"Access denied: your role does not have permission to access {category} requests."
         }
 
+    # The agent, gets the FULL conversation history, since it's a general-purpose LLM well suited to multi-turn context.
+
+    conversation = []
+
+    for h in history:
+        conversation.append((h[0], h[1]))
+
+    conversation.append(("user", text))
+
     agent = build_agent(role)
-    result = agent.invoke({"messages" : [("user", text)]})
+    result = agent.invoke({"messages" : conversation})
 
     return {
         "category" : category,
@@ -89,3 +116,4 @@ def handle_message(text, role):
 
 
 
+# print(classify_message("hi i lost my baggage flight number was SK315"))

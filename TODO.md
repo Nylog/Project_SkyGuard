@@ -17,7 +17,4 @@
   the flights table (Boeing 737, Airbus A320, etc.) — real aircraft have
   hundreds of seats each. Consider starting with ONE aircraft type as a proof
   of concept before expanding to all of them.
-
-## Later / nice to have
-- Airport code → city name mapping (e.g. "VCE" → "Venice") so agent responses
-  read more naturally to passengers who don't know IATA codes
+  

@@ -32,3 +32,15 @@ CREATE TABLE IF NOT EXISTS baggage_reports (
         CHECK (status IN ('REPORTED', 'IN PROGRESS', 'FOUND', 'CLOSED')),
     FOREIGN KEY (flight_number) REFERENCES flights(flight_number)
 );
+
+CREATE TABLE IF NOT EXISTS seats (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    category TEXT NOT NULL CHECK (category IN ('narrow_body', 'wide_body')),
+    seat_number TEXT NOT NULL,
+    position TEXT NOT NULL CHECK (position in ('window', 'middle', 'aisle')),
+    row_position TEXT NOT NULL CHECK (row_position in ('front', 'middle', 'rear')),
+    has_usb INTEGER NOT NULL,
+    has_power_outlet INTEGER NOT NULL,
+    has_tv INTEGER NOT NULL,
+    UNIQUE (category, seat_number)
+);

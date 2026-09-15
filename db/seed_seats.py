@@ -105,3 +105,5 @@ def seed_seats():
 
 
 
+if __name__ == "__main__":
+    seed_seats()

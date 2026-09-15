@@ -41,10 +41,35 @@ def generate_narrow_body():
                           position,
                           row_position(row, total_row),
                           1, # has usb
-                          1 if row <= 10 else 0,  # has_power_outlet: front rows only
+                          1 if row <= 10 else 0,  # has power outlet: front rows only
                           0,  # has_tv: none on narrow-body 
                           ))
 
+    return seats
+
+
+
+def generate_wide_body():
+
+    # Double aisle, 2-4-2 layout: A B | aisle | C D E F | aisle | G H
+    columns = {
+        "A" : "window", "B" : "aisle",
+        "C" : "aisle", "D" : "middle", "E" : "middle", "F" : "aisle",
+        "G" : "aisle", "H" : "window"
+    }
+
+    total_row = 35
+    seats = []
+
+    for row in range(1, total_row +1):
+        for col, position in columns.items():
+            seats.append(("wide_body", f"{row}{col}",
+                          position,
+                          row_position(row, total_row),
+                          1, # has usb
+                          1, # has power outlet
+                          1, # has tv
+                          ))
     return seats
 
 

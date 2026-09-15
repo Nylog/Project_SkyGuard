@@ -50,6 +50,9 @@ def generate_narrow_body():
 
 
 def generate_wide_body():
+    """
+        Generate a standard list of seats for a wide-body aircraft.
+        """
 
     # Double aisle, 2-4-2 layout: A B | aisle | C D E F | aisle | G H
     columns = {
@@ -71,5 +74,34 @@ def generate_wide_body():
                           1, # has tv
                           ))
     return seats
+
+
+def seed_seats():
+    """
+    Initialize the database schema and populate the seats table.
+    """
+    
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+
+    with open(SCHEMA_PATH, "r") as f:
+        cursor.executescript(f.read())
+
+    all_seats = generate_narrow_body() + generate_wide_body()
+
+    cursor.executemany(
+        """
+        INSERT OR IGNORE INTO seats
+        (category, seat_number, position, row_position, has_usb, has_power_outlet, has_tv)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+        """,
+        all_seats
+    )
+
+    conn.commit()
+    conn.close()
+
+    print(f"seat map generated: {len(all_seats)} seats total")
+
 
 

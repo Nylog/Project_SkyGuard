@@ -30,6 +30,28 @@ Airports_coordinates= {
     "WAW" : (52.1657, 20.9671)
 }
 
+Airport_cities = {
+    "JFK" : "New York",
+    "TLV" : "Tel Aviv",
+    "FCO" : "Roma",
+    "LCY" : "London",
+    "AMS" : "Amsterdam",
+    "CDG" : "Paris",
+    "BUD" : "Budapest",
+    "VCE" : "Venezia",
+    "MAD" : "Madrid",
+    "LIS" : "Lisbona",
+    "MUC" : "Munich",
+    "BCN" : "Barcelona",
+    "ATH" : "Athens",
+    "FRA" : "Frankfurt",
+    "CPH" : "Copenhagen",
+    "ORY" : "Paris",
+    "MXP" : "Milan",
+    "VIE" : "Vienna",
+    "WAW" : "Warsaw"
+}
+
 def get_weather(airport_code):    
     if airport_code not in Airports_coordinates:
         return None

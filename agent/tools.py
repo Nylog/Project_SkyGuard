@@ -16,7 +16,7 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent.parent)) 
 
 from db.db_utils import get_flight_by_number, create_baggage_report, get_baggage_report
-from agent.weather import get_weather, interpret_departure_weather, get_destination_weather_info
+from agent.weather import get_weather, interpret_departure_weather, get_destination_weather_info, Airport_cities
 
 from math import radians, sin, cos, sqrt, atan2
 from agent.weather import Airports_coordinates
@@ -48,6 +48,9 @@ def get_flight_status(flight_number):
     "status" : flight["status"],
     "gate" : flight["gate"]
     }
+
+    result["origin_city"] = Airport_cities.get(flight["origin"], flight["origin"])
+    result["destination_city"] = Airport_cities.get(flight["destination"], flight["destination"])
 
     # Weather data might be unavailable if the airport code isn't in our coordinates map,
     # so we check before trying to interpret it.

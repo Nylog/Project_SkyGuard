@@ -21,4 +21,30 @@ def row_position (row, total_row) :
 
 
 
+def generate_narrow_body():
+    """
+    Generate a standard list of seats for a narrow-body aircraft.
+    """
+
+    # Single aisle, 3-3 layout: A B C | aisle | D E F
+    columns = {
+        "A" : "window", "B" : "middle", "C" : "aisle",
+        "D" : "aisle", "E" : "middle", "F" : "window"
+        }
+
+    total_row = 30
+    seats = []
+
+    for row in range(1, total_row + 1) :
+        for col, position in columns.items():
+            seats.append(("narrow_body", f"{row}{col}",
+                          position,
+                          row_position(row, total_row),
+                          1, # has usb
+                          1 if row <= 10 else 0,  # has_power_outlet: front rows only
+                          0,  # has_tv: none on narrow-body 
+                          ))
+
+    return seats
+
 

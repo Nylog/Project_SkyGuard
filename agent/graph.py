@@ -13,7 +13,7 @@ from langgraph.prebuilt import create_react_agent
 # If this stops working in the future, switch to:
 # from langchain.agents import create_agent
 
-from agent.tools import get_flight_status, report_lost_baggage, check_baggage_status, calculate_fuel_load
+from agent.tools import get_flight_status, report_lost_baggage, check_baggage_status, calculate_fuel_load, get_seat_info
 
 import sys
 from pathlib import Path

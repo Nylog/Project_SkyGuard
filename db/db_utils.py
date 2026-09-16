@@ -106,3 +106,18 @@ def get_baggage_report(reference_number):
     conn.close()
 
     return dict(row) if row else None
+
+
+
+def get_seat_info(category, seat_number):
+    # Retrieves information for a specific seat based on its category and number.
+
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM seats WHERE category = ? AND seat_number = ?", (category, seat_number))
+    row = cursor.fetchone()
+    conn.close()
+
+    return dict(row) if row else None
+
+

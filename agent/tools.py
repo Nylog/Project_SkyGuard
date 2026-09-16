@@ -142,3 +142,29 @@ def calculate_fuel_load(flight_number, passengers):
     }
 
 
+def get_seat_amenties(flight_number, seat_number):
+    """
+    Looks up seat information
+    for a given flight and seat number, using the aircraft type of that
+    flight
+    """
+
+    flight = get_flight_by_number(flight_number)
+
+    if flight is None:
+        return {"error" : f"No flight found with number {flight_number}"}
+
+    category = aircraft_category.get(flight["aircraft_type"])
+
+    if category is None:
+        return {"error" : f"No seat map avaible for aircraft type: {flight['aircraft_type']}"}
+
+
+    seat = get_seat_info(category, seat_number.upper())
+
+    if seat is None:
+        return {"error" : f"No seat found with number {seat_number}"}
+
+    return sea
+
+

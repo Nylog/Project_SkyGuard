@@ -13,7 +13,7 @@ from langgraph.prebuilt import create_react_agent
 # If this stops working in the future, switch to:
 # from langchain.agents import create_agent
 
-from agent.tools import get_flight_status, report_lost_baggage, check_baggage_status, calculate_fuel_load, get_seat_info
+from agent.tools import get_flight_status, report_lost_baggage, check_baggage_status, calculate_fuel_load, get_seat_amenities
 
 import sys
 from pathlib import Path
@@ -67,15 +67,15 @@ def calculate_fuel_load_tool(flight_number : str, passengers : int) -> dict:
 
 
 @tool
-def seat_amenties_tool(flight_number : str, seat_number :  str) -> dict:
+def seat_amenities_tool(flight_number : str, seat_number :  str) -> dict:
     """Checks seat details (window/aisle/middle, USB, power outlet, TV) for a given flight and seat number."""
-    return get_seat_info(flight_number, seat_number)
+    return get_seat_amenities(flight_number, seat_number)
 
 
 
 llm = ChatOllama(model = "qwen2.5:7b-instruct", temperature = 0)
 
-BASE_TOOLS = [flight_status_tool, report_lost_baggage_tool, check_baggage_status_tool, seat_amenties_tool]
+BASE_TOOLS = [flight_status_tool, report_lost_baggage_tool, check_baggage_status_tool, seat_amenities_tool]
 ADMIN_TOOLS = [calculate_fuel_load_tool]
 
 def build_agent(role):

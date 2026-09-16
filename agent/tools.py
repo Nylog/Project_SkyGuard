@@ -142,7 +142,7 @@ def calculate_fuel_load(flight_number, passengers):
     }
 
 
-def get_seat_amenties(flight_number, seat_number):
+def get_seat_amenities(flight_number, seat_number):
     """
     Looks up seat information
     for a given flight and seat number, using the aircraft type of that

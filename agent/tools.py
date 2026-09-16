@@ -165,6 +165,6 @@ def get_seat_amenties(flight_number, seat_number):
     if seat is None:
         return {"error" : f"No seat found with number {seat_number}"}
 
-    return sea
+    return seat
 
 

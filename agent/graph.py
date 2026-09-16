@@ -70,7 +70,7 @@ def seat_amenties_tool(flight_number : str, seat_number :  str) -> dict:
 
 llm = ChatOllama(model = "qwen2.5:7b-instruct", temperature = 0)
 
-BASE_TOOLS = [flight_status_tool, report_lost_baggage_tool, check_baggage_status_tool]
+BASE_TOOLS = [flight_status_tool, report_lost_baggage_tool, check_baggage_status_tool, seat_amenties_tool]
 ADMIN_TOOLS = [calculate_fuel_load_tool]
 
 def build_agent(role):

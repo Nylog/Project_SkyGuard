@@ -61,6 +61,13 @@ def calculate_fuel_load_tool(flight_number : str, passengers : int) -> dict:
     return calculate_fuel_load(flight_number, passengers)
 
 
+@tool
+def seat_amenties_tool(flight_number : str, seat_number :  str) -> dict:
+    """Checks seat details (window/aisle/middle, USB, power outlet, TV) for a given flight and seat number."""
+    return get_seat_info(flight_number, seat_number)
+
+
+
 llm = ChatOllama(model = "qwen2.5:7b-instruct", temperature = 0)
 
 BASE_TOOLS = [flight_status_tool, report_lost_baggage_tool, check_baggage_status_tool]
@@ -81,4 +88,5 @@ def build_agent(role):
     return create_react_agent(llm, tools = tools, prompt = SYSTEM_PROMPT )
 # If this stops working in the future, switch to:
 # agent = create_agent(llm, tools = [flight_status_tool], system_prompt = SYSTEM_PROMPT)
+
 

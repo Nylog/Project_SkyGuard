@@ -121,3 +121,13 @@ def get_seat_info(category, seat_number):
     return dict(row) if row else None
 
 
+def get_all_flights():
+    # Fetches all flights from the database sorted by flight number.
+
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT flight_number, origin, destination, status FROM flights ORDER BY flight_number")
+    rows = cursor.fetchall()
+    conn.close()
+
+    return [dict(row) for row in rows]

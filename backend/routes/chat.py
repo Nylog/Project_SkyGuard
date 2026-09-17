@@ -6,6 +6,8 @@ sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 from agent.router import handle_message
 
+from db.db_utils import get_all_flights
+
 chat_bp = Blueprint("chat", __name__)
 
 @chat_bp.route("/chat", methods = ["POST"])

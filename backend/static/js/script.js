@@ -23,6 +23,8 @@ const chatMessage = document.getElementById("chat-messages");
 const chatInput = document.getElementById("chat-input");
 const sendButton = document.getElementById("send-button");
 
+const flightsList = document.getElementById("flights-list");
+
 
 
 // Sends the login request to the backend and switches views on success.
@@ -48,6 +50,7 @@ async function login() {
 
     loginView.classList.add("hidden");
     chatView.classList.remove("hidden");
+    loadFlights();
 
 }
 
@@ -98,6 +101,29 @@ async function sendMessage(){
     addMessage(data.response, "agent")
 
 }
+
+
+
+async function loadFlights(){
+    const response = await fetch("/flights");
+    if (!response.ok) return;
+    const flights = await response.json();
+
+    flightsList.innerHTML = "";
+    flights.forEach(f => {
+        const chip = document.createElement("span");
+        chip.classList.add("flight-chip");
+        chip.textContent = `${f.flight_number} (${f.origin}→${f.destination})`;
+        chip.addEventListener("click", () => {
+            chatInput.value = `flight ${f.flight_number}`;
+            chatInput.focus();
+        });
+        flightsList.appendChild(chip);
+    });
+}
+
+
+
 
 // --- Event ---
 

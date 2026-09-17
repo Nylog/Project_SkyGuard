@@ -40,3 +40,17 @@ def chat():
 
 
     return jsonify(result)
+
+
+
+@chat_bp.route("/flights", methods = ["GET"])
+def flights() :
+    """
+    Returns the list of available flight numbers
+    """
+
+    if "username" not in session:
+        return jsonify({"error" : "Not logged in"}), 401
+
+    return jsonify(get_all_flights())
+

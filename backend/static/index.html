@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skyguard</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Login view: shown by default, hidden after a successful login -->
@@ -27,6 +29,11 @@
         <div id = "chat-header">
             <span id="logged-in-as"></span> <!-- Filled by script.js with the logged-in username/role -->
             <button id="logout-button">Log out</button>
+        </div>
+
+        <div id="flights-panel">
+            <span class="flights-label">Available flights:</span>
+            <div id="flights-list"></div>
         </div>
 
         <div id="chat-messages"></div> <!-- script.js appends each new message here -->

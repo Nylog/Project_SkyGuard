@@ -16,11 +16,11 @@ flight_definitions = [
     ("SK204", "Airbus A220-100", "FCO", "LCY", 0,  165, "A4", "BOARDING"),
     ("SK315", "Airbus A320", "AMS", "CDG", 1, 80, "C7", "DELAYED"),
     ("SK427", "Airbus A319", "BUD", "VCE", 2, 75, "D2", "ON TIME"),
-    ("SK588", "Boeing 737", "MAD", "LIS", 3, 70, "B8", "ON TIME"),
+    ("SK588", "Boeing 737", "MAD", "LIS", 3, 70, "B8", "EN ROUTE"),
     ("SK612", "Airbus A321", "MUC", "BCN", 4, 100, "A1", "DELAYED"),
     ("SK733", "Boeing 737", "CDG", "ATH", -1, 200, "C3", "DEPARTED"),
     ("SK849", "Airbus A320", "FRA", "CPH", 6, 90, "B5", "ON TIME"),
-    ("SK901", "Airbus A320", "ORY", "MXP", 8, 75, "D9", "ON TIME"),
+    ("SK901", "Airbus A320", "ORY", "MXP", 8, 75, "D9", "EN ROUTE"),
     ("SK1024", "Airbus A319", "VIE", "WAW", -3, 80, "A6", "LANDED"),
 
 ]

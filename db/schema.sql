@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS flights (
     duration_minutes INTEGER NOT NULL,
     gate TEXT,
     status TEXT NOT NULL DEFAULT 'ON TIME'
-        CHECK (status IN ('ON TIME', 'DELAYED', 'BOARDING', 'DEPARTED', 'LANDED', 'CANCELLED'))
+        CHECK (status IN ('ON TIME', 'DELAYED', 'BOARDING', 'DEPARTED', 'LANDED', 'CANCELLED', 'EN ROUTE'))
 );
 
 
